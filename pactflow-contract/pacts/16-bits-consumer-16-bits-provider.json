@@ -1,0 +1,45 @@
+{
+  "consumer": {
+    "name": "16-bits-consumer"
+  },
+  "provider": {
+    "name": "16-bits-provider"
+  },
+  "interactions": [
+    {
+      "description": "a request to get a customer",
+      "providerState": "a customer with ID 1 exists",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/customers/1"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "id": 1,
+          "name": "Luiz",
+          "middleName": "De O",
+          "lastName": "Costa",
+          "becameCustomer": "2021/06/27"
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "^application\\/json"
+          },
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

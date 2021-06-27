@@ -1,0 +1,6 @@
+/pactflow-contract/node_modules/
+/pactflow-contract/logs/pact.log
+/pactflow-contract/.env
+/pactflow-contract/.idea/
+/.idea/
+/pactflow-contract/package-lock.json
